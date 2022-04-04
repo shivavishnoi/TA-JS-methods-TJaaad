@@ -66,7 +66,7 @@ let numbers = [100, 200, 33, 45, 65, 76, 51];
 function isOdd(num) {
   return num % 2 !== 0;
 }
-let oddNumbers = numbers.filter(isOdd);
+let oddNumbers = numbers.filter(isOdd);[33, 45, 65, 51];
 ```
 
 ```js
@@ -80,9 +80,10 @@ let filteredNumbers = numbers.filter(test);
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function test(num) {
-  console.log(num);
+  console.log(num);     
 }
-let filteredNumbers = numbers.filter(test);
+let filteredNumbers = numbers.filter(test); 
+// log all values
 ```
 
 ```js
@@ -98,5 +99,5 @@ let numbers = [100, 200, 33, 45, 65, 76, 51];
 function add(accumulator, currentValue) {
   console.log(accumulator + currentValue);
 }
-let sum = numbers.reduce(add);
+let sum = numbers.reduce(add); // 300
 ```
