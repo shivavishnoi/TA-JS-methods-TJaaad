@@ -100,6 +100,10 @@ Output:
 
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
 */
+let fruitsArr = Object.keys(fruitsObj).reduce((acc, fruit) => {
+  acc = acc.concat([[fruit, fruitsObj[fruit]]])
+  return acc
+}, [])
 
 const data = [
   [1, 2, 3],
