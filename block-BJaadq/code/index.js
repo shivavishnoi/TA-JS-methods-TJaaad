@@ -2,34 +2,91 @@
 
 function countAllPeople() {
   // your code goes here
+  let count = 0
+  for (let house of got.houses) {
+    count += house.people.length
+  }
+  return count
 }
 
 function peopleByHouses() {
   // your code goes here
+  let count = {}
+  for (let i = 0; i < got.houses.length; i++) {
+    count[got.houses[i].name] = got.houses[i].people.length
+  }
+  return count
 }
 
 function everyone() {
   // your code goes here
+  let res = []
+  for (let house of got.houses) {
+    for (let person of house.people) {
+      res.push(person.name)
+    }
+  }
+  return res
 }
 
 function nameWithS() {
   // your code goes here
+  let preRes = everyone()
+  let res = []
+  for (let name of preRes) {
+    if (name.includes(`s`) || name.includes(`S`)) res.push(name)
+  }
+  return res
 }
 
 function nameWithA() {
   // your code goes here
+  let preRes = everyone()
+  let res = []
+  for (let name of preRes) {
+    if (name.includes(`a`) || name.includes(`A`)) res.push(name)
+  }
+  return res
 }
 
 function surnameWithS() {
-  // your code goes here
+  // your code goes here  
+  let res = []
+  let splitted = ''
+  for (let house of got.houses) {
+    for (let person of house.people) {
+      splitted = person.name.split(' ')
+      if (splitted[1].startsWith(`s`) || splitted[1].startsWith(`S`)) res.push(person.name)
+    }
+  }
+  return res
 }
 
 function surnameWithA() {
   // your code goes here
+  let res = []
+  let splitted = ''
+  for (let house of got.houses) {
+    for (let person of house.people) {
+      splitted = person.name.split(' ')
+      if (splitted[1].startsWith(`a`) || splitted[1].startsWith(`A`)) res.push(person.name)
+    }
+  }
+  return res
 }
 
 function peopleNameOfAllHouses() {
   // your code goes here
+  let res = {}
+  let name = []
+  for (let house of got.houses) {
+    for (let person of house.people) {
+      name.push(person.name)
+      res[house.name] = name
+    }
+    name = []
+  }
+  return res
 }
 
 // Testing your result after writing your function
